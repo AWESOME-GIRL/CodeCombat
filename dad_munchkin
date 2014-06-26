@@ -1,0 +1,22 @@
+var type = 'munchkin';
+var go = true;
+
+if (this.gold > 100 || this.flush) {
+  if (this.built.length % 6 === 1) {
+     type = 'thrower';
+  }
+  else if (this.built.length % 6 === 5 ){
+    type = 'shaman';
+  }
+  if (this.gold > 50) {
+   this.flush = true;
+  }
+  else {   
+    this.flush = false;  
+  }
+  this.build(type);
+
+}
+else { 
+    this.flush = false;
+}
